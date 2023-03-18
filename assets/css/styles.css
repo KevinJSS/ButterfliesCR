@@ -1,0 +1,132 @@
+/* PROPIEDADES PERSONALIZADAS */
+:root {
+    /* Paleta de colores */
+    --primario: #FFCC05;
+    --primario--hover: #F6A21E;
+    --secundario: #78D045;
+    --secundario--hover: #5cb727;    
+    --gris-oscuro: #303030;
+    --blanco: #fffefe;
+    --negro: #1C1C1C;
+
+    /* Tipografia */
+    --tipografia-encabezado: 'PT Serif', serif;
+    --tipografia-parrafo: 'Raleway', sans-serif;
+
+    /* Border Radius */
+    --border-radius-m: .5rem;
+    --border-radius-l: 1rem;
+
+    /* Espaciado */
+    --espaciado-s: 2.5rem;
+    --espaciado-m: 5rem;
+    --espaciado-l: 10rem;
+}
+
+/* ESTRUCTURA DEL HTML */
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; /* 1rem = 10px */
+}
+
+*,
+:before,
+*:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: var(--tipografia-parrafo);
+    line-height: 2;
+}
+
+/* ESTILOS GLOBALES */
+h1,
+h2,
+h3 {
+    font-weight: 700;
+    margin: 1rem 0 3rem;
+    font-family: var(--tipografia-encabezado);
+}
+
+h1 {
+    font-size: 5rem;
+}
+
+h2 {
+    font-size: 4.5rem;
+}
+
+h3 {
+    font-size: 4rem;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    margin: 0;
+}
+
+.boton {
+    font-weight: 700;
+    font-size: 2rem;
+    padding: 1.2rem 4rem;
+    display: block;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    transition: background-color .3s ease-in-out;
+    -webkit-transition: background-color .3s ease-in-out;
+    -moz-transition: background-color .3s ease-in-out;
+    -ms-transition: background-color .3s ease-in-out;
+    -o-transition: background-color .3s ease-in-out;
+}
+
+.boton:hover {
+    cursor: pointer;
+}
+
+.boton--primario {
+    color: var(--blanco);
+    background-color: var(--primario);
+}
+
+.boton--primario:hover {
+    background-color: var(--primario--hover);
+}
+
+/* UTILIDADES */
+.contenedor {
+    max-width: 140rem;
+    margin: 0 auto;
+    width: 95%;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mt-5 {
+    margin-top: 5rem;
+}
+
+.mb-5 {
+    margin-bottom: 5rem;
+}
