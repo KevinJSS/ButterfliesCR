@@ -155,7 +155,7 @@ button {
 /* ENCABEZADO */
 .header {
     height: 98vh;
-    background-image: linear-gradient(rgb( 0 0 0 / .2) 0%, rgb( 0 0 0 / .2) 100%), url('../images/Header/Fondo-Archeoprepona.JPG');
+    background-image: linear-gradient(rgb( 0 0 0 / .1) 0%, rgb( 0 0 0 / .1) 100%), url('../images/Header/Fondo-Archeoprepona.JPG');
     background-repeat: no-repeat;
     background-position: center, 35%;
     background-size: cover;
@@ -207,8 +207,8 @@ button {
 }
 
 .header__logo {
-    width: 10rem;
-    height: 10rem;
+    width: 9rem;
+    height: 9rem;
 }
 
 .header__nav {
@@ -233,6 +233,10 @@ button {
     -moz-transition: color .1s ease-in;
     -ms-transition: color .1s ease-in;
     -o-transition: color .1s ease-in;
+}
+
+.header__link--activo {
+    color: var(--primario-hover);
 }
 
 .header__link:hover {
