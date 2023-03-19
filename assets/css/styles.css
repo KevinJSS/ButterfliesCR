@@ -93,6 +93,10 @@ a {
     text-decoration: none;
 }
 
+p {
+    font-weight: 500;
+}
+
 img {
     max-width: 100%;
     display: block;
@@ -114,11 +118,12 @@ button {
     text-align: center;
     text-decoration: none;
     border: none;
-    transition: background-color .3s ease-in-out;
-    -webkit-transition: background-color .3s ease-in-out;
-    -moz-transition: background-color .3s ease-in-out;
-    -ms-transition: background-color .3s ease-in-out;
-    -o-transition: background-color .3s ease-in-out;
+    
+    transition: background-color .2s ease-in-out;
+    -webkit-transition: background-color .2s ease-in-out;
+    -moz-transition: background-color .2s ease-in-out;
+    -ms-transition: background-color .2s ease-in-out;
+    -o-transition: background-color .2s ease-in-out;
 
     border-radius: var(--border-radius-xl);
     -webkit-border-radius: var(--border-radius-xl);
@@ -366,7 +371,7 @@ button {
 }
 
 .productos__titulo {
-    text-align: center;
+    text-transform: capitalize;
 }
 
 .productos__grid {
@@ -421,13 +426,15 @@ button {
     -o-border-radius: var(--border-radius-m);
 }
 
-.producto:hover {
-    transform: scale(1.1) rotate(-0.5deg);
-    -webkit-transform: scale(1.1) rotate(-0.5deg);
-    -moz-transform: scale(1.1) rotate(-0.5deg);
-    -ms-transform: scale(1.1) rotate(-0.5deg);
-    -o-transform: scale(1.1) rotate(-0.5deg);
-    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+@media (min-width: 1200px) {
+    .producto:hover {
+        transform: scale(1.1) rotate(-0.5deg);
+        -webkit-transform: scale(1.1) rotate(-0.5deg);
+        -moz-transform: scale(1.1) rotate(-0.5deg);
+        -ms-transform: scale(1.1) rotate(-0.5deg);
+        -o-transform: scale(1.1) rotate(-0.5deg);
+        box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    }
 }
 
 .producto:nth-child(1) {
@@ -489,3 +496,57 @@ button {
     color: var(--primario-hover);
 }
 
+/* BARRA-PRODUCTO */
+.barra-producto {
+    display: flex;
+    align-items: center;
+
+    margin-top: var(--espaciado-m);
+    background-image: linear-gradient(to bottom, transparent 50%, var(--gris-oscuro) 0%), url('../images/Product-Divider/HeliconiusCydnoGalanthus.jpg');
+    background-position: center, top center;
+    background-repeat: repeat, no-repeat;
+    background-size: 100%, 80rem;
+}
+
+@media (min-width: 768px) {
+    .barra-producto {
+        margin: var(--espaciado-l) 0;
+        background-image: linear-gradient(to right, transparent 50%, var(--gris-oscuro) 0%), url('../images/Product-Divider/HeliconiusCydnoGalanthus.jpg');
+        background-position: center, left;
+        background-repeat: repeat, no-repeat;
+        background-size: 100%, 110rem;
+    }
+}
+
+.barra-producto__grid {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+}
+
+@media (min-width: 768px) {
+    .barra-producto__grid {
+        grid-template-rows: unset;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5rem;
+    }
+}
+
+.barra-producto__contenido {
+    grid-row: 2 / 3;
+    padding: 5rem 5rem 8rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+@media (min-width: 768px) {
+    .barra-producto__contenido {
+        grid-column: 2 / 3;
+    }
+}
+
+.barra-producto__texto {
+    color: var(--blanco);
+    font-size: 1.6rem;
+}
