@@ -172,7 +172,7 @@ button {
 /* ENCABEZADO */
 .encabezado {
     height: 98vh;
-    background-image: linear-gradient(rgb( 0 0 0 / .1) 0%, rgb( 0 0 0 / .1) 100%), url('../images/Header/Fondo-Archeoprepona.JPG');
+    background-image: linear-gradient(rgb( 0 0 0 / .5) 0%, rgb( 0 0 0 / .01) 100%), url('../images/Header/Fondo-Archeoprepona.JPG');
     background-repeat: no-repeat;
     background-position: center, 35%;
     background-size: cover;
