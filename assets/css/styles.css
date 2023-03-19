@@ -1,8 +1,8 @@
 /* PROPIEDADES PERSONALIZADAS */
 :root {
     /* Paleta de colores */
-    --primario: #FFCC05;
-    --primario-hover: #F6A21E;
+    --primario: #f7a92b;
+    --primario-hover: #FFCC05;
     --secundario: #78D045;
     --secundario-hover: #5cb727;    
     --gris-oscuro: #303030;
@@ -16,6 +16,7 @@
     /* Border Radius */
     --border-radius-m: .5rem;
     --border-radius-l: 1rem;
+    --border-radius-xl: 5rem;
 
     /* Espaciado */
     --espaciado-xs: 1.25rem;
@@ -44,6 +45,8 @@ body {
     font-family: var(--tipografia-parrafo);
     line-height: 2;
     height: 100%;
+
+    background-color: #ffffff;
 }
 
 /* ESTILOS GLOBALES */
@@ -51,20 +54,21 @@ h1,
 h2,
 h3 {
     font-weight: 700;
+    line-height: 1.5;
     margin: 1rem 0 3rem;
     font-family: var(--tipografia-encabezado);
 }
 
 h1 {
-    font-size: 3rem;
+    font-size: 4rem;
 }
 
 h2 {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
 }
 
 h3 {
-    font-size: 2rem;
+    font-size: 3rem;
 }
 
 @media (min-width: 992px) {
@@ -101,9 +105,10 @@ button {
 }
 
 .boton {
+    text-transform: uppercase;
     font-weight: 700;
-    font-size: 2rem;
-    padding: 1.2rem 4rem;
+    font-size: 1.6rem;
+    padding: .7rem 1.2rem;
     display: block;
     width: 100%;
     text-align: center;
@@ -114,6 +119,18 @@ button {
     -moz-transition: background-color .3s ease-in-out;
     -ms-transition: background-color .3s ease-in-out;
     -o-transition: background-color .3s ease-in-out;
+
+    border-radius: var(--border-radius-xl);
+    -webkit-border-radius: var(--border-radius-xl);
+    -moz-border-radius: var(--border-radius-xl);
+    -ms-border-radius: var(--border-radius-xl);
+    -o-border-radius: var(--border-radius-xl);
+}
+
+@media (min-width: 992px) {
+    .boton {
+        width: 18rem;
+    }
 }
 
 .boton:hover {
@@ -153,7 +170,7 @@ button {
 }
 
 /* ENCABEZADO */
-.header {
+.encabezado {
     height: 98vh;
     background-image: linear-gradient(rgb( 0 0 0 / .1) 0%, rgb( 0 0 0 / .1) 100%), url('../images/Header/Fondo-Archeoprepona.JPG');
     background-repeat: no-repeat;
@@ -162,19 +179,19 @@ button {
 }
 
 @media (min-width: 992px) {
-    .header {
+    .encabezado {
         height: 92vh;
         background-position: center, bottom center;
     }
 }
 
 @media (min-height: 1000px) {
-    .header {
+    .encabezado {
         height: 80rem;
     }
 }
 
-.header__contenido {
+.encabezado__contenido {
     padding: var(--espaciado-xs) 0;
     height: 95%;
     display: flex;
@@ -184,12 +201,12 @@ button {
 }
 
 @media (min-width: 992px) {
-    .header__contenido {
+    .encabezado__contenido {
         height: 90%;
     }
 }
 
-.header__barra {
+.encabezado__barra {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -199,19 +216,19 @@ button {
 }
 
 @media (min-width: 992px) {
-    .header__barra {
+    .encabezado__barra {
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
     }
 }
 
-.header__logo {
+.encabezado__logo {
     width: 9rem;
     height: 9rem;
 }
 
-.header__nav {
+.encabezado__nav {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -219,13 +236,13 @@ button {
 }
 
 @media (min-width: 768px) {
-    .header__nav {
+    .encabezado__nav {
         flex-direction: row;
         gap: 4rem;
     }
 }
 
-.header__link {
+.encabezado__link {
     text-transform: uppercase;
     font-size: 1.6rem;
     font-weight: 700;
@@ -237,54 +254,106 @@ button {
     -o-transition: color .1s ease-in;
 }
 
-.header__link--activo {
-    color: var(--primario);
+.encabezado__link--activo {
+    color: var(--primario-hover);
 }
 
-.header__link:hover {
-    color: var(--primario);
+.encabezado__link:hover {
+    color: var(--primario-hover);
 }
 
-.header__texto {
+.encabezado__texto {
     padding-top: 10rem;
     text-align: center;
     color: var(--blanco);
 }
 
 @media (min-width: 768px) {
-    .header__texto {
+    .encabezado__texto {
         width: 70%;
         margin: 0 auto;
     }
 }
 
 @media (min-width: 992px) {
-    .header__texto {
+    .encabezado__texto {
         width: 33%;
         text-align: left;
         margin: unset;
     }
 }
 
-.header__especie-mariposa {
+.encabezado__especie-mariposa {
     margin: 0 0 1rem;
     line-height: 1.5;
     font-size: 3rem;
 }
 
-.header__descripcion {
+.encabezado__descripcion {
     font-size: 1.6rem;
     line-height: 1.5;
 }
 
 @media (min-width: 992px) {
-    .header__especie-mariposa {
+    .encabezado__especie-mariposa {
         margin: 0 0 2rem;
         font-size: 5rem;
     }
     
-    .header__descripcion {
+    .encabezado__descripcion {
         font-size: 1.8rem;
         line-height: 2;
     }
+}
+
+/* NOSOTROS */
+.nosotros {
+    padding: var(--espaciado-m) 0;
+    background-image: linear-gradient(rgb( 255 255 255 / .3) 0%, rgb( 255 255 255 / .3) 100%), url('../images/background.jpg');
+    background-repeat: no-repeat;
+    background-position: center, center;
+    background-size: cover;
+}
+
+@media (min-width: 768px) {
+    .nosotros {
+        padding: var(--espaciado-l) 0;
+    }
+
+
+    .nosotros__grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+        gap: 5rem;
+    }
+}
+
+.nosotros__img {
+    margin: 0 auto 4rem;
+    border-radius: var(--border-radius-m);
+    -webkit-border-radius: var(--border-radius-m);
+    -moz-border-radius: var(--border-radius-m);
+    -ms-border-radius: var(--border-radius-m);
+    -o-border-radius: var(--border-radius-m);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+@media (min-width: 768px) {
+    .nosotros__img {
+        margin: 0 2rem 0 auto;
+    }
+}
+
+.nosotros__contenido {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.nosotros__titulo {
+    margin: 0;
+    line-height: 1;
+    text-transform: capitalize;
 }
