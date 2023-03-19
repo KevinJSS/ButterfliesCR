@@ -1,8 +1,8 @@
 /* PROPIEDADES PERSONALIZADAS */
 :root {
     /* Paleta de colores */
-    --primario: #f7a92b;
-    --primario-hover: #FFCC05;
+    --primario: #ffcd04;
+    --primario-hover: #ffda08;
     --secundario: #78D045;
     --secundario-hover: #5cb727;    
     --gris-oscuro: #303030;
@@ -45,7 +45,7 @@ body {
     font-family: var(--tipografia-parrafo);
     line-height: 2;
     height: 100%;
-
+    color: var(--negro);
     background-color: #ffffff;
 }
 
@@ -143,7 +143,7 @@ button {
 }
 
 .boton--primario:hover {
-    background-color: var(--primario-hover);
+    background-color: var(--negro);
 }
 
 /* UTILIDADES */
@@ -167,6 +167,13 @@ button {
 
 .d-none {
     display: none;
+}
+
+.fondo-patron {
+    background-image: linear-gradient(rgb( 255 255 255 / .3) 0%, rgb( 255 255 255 / .3) 100%), url('../images/background.jpg');
+    background-repeat: no-repeat;
+    background-position: center, center;
+    background-size: cover;
 }
 
 /* ENCABEZADO */
@@ -309,17 +316,12 @@ button {
 /* NOSOTROS */
 .nosotros {
     padding: var(--espaciado-m) 0;
-    background-image: linear-gradient(rgb( 255 255 255 / .3) 0%, rgb( 255 255 255 / .3) 100%), url('../images/background.jpg');
-    background-repeat: no-repeat;
-    background-position: center, center;
-    background-size: cover;
 }
 
 @media (min-width: 768px) {
     .nosotros {
         padding: var(--espaciado-l) 0;
     }
-
 
     .nosotros__grid {
         display: grid;
@@ -357,3 +359,133 @@ button {
     line-height: 1;
     text-transform: capitalize;
 }
+
+/* PRODUCTOS */
+.productos {
+    padding: var(--espaciado-s) 0;
+}
+
+.productos__titulo {
+    text-align: center;
+}
+
+.productos__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 0 1rem;
+    gap: 2rem;
+
+    overflow-y: hidden;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+
+    width: 100%;
+}
+
+@media (min-width: 1200px) {
+    .productos__grid {
+        overflow: unset;
+        scroll-snap-type: unset;
+        padding: 0;
+    }
+}
+
+.producto {
+    height: 45rem;
+    width: 30rem;
+    
+    padding: 2rem;
+    margin-bottom: 2rem;
+    
+    scroll-behavior: smooth;
+    scroll-snap-align: center;
+    
+    background-repeat: no-repeat;
+    background-position: center, center;
+    background-size: cover;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    
+    transition: transform .275s ease-in, box-shadow .2s ease-in;
+    -webkit-transition: transform .275s ease-in, box-shadow .2s ease-in;
+    -moz-transition: transform .275s ease-in, box-shadow .2s ease-in;
+    -ms-transition: transform .275s ease-in, box-shadow .2s ease-in;
+    -o-transition: transform .275s ease-in, box-shadow .2s ease-in;
+
+    border-radius: var(--border-radius-m);
+    -webkit-border-radius: var(--border-radius-m);
+    -moz-border-radius: var(--border-radius-m);
+    -ms-border-radius: var(--border-radius-m);
+    -o-border-radius: var(--border-radius-m);
+}
+
+.producto:hover {
+    transform: scale(1.1) rotate(-0.5deg);
+    -webkit-transform: scale(1.1) rotate(-0.5deg);
+    -moz-transform: scale(1.1) rotate(-0.5deg);
+    -ms-transform: scale(1.1) rotate(-0.5deg);
+    -o-transform: scale(1.1) rotate(-0.5deg);
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.producto:nth-child(1) {
+    background-image: linear-gradient(rgb( 0 0 0 / 0) 0%, rgb( 0 0 0 / .1) 85%, rgb( 0 0 0 / .5) 100%), url('../images/Products/Joyas/collar-mariposa.JPG');
+}
+
+.producto:nth-child(2) {
+    background-image: linear-gradient(rgb( 0 0 0 / 0) 0%, rgb( 0 0 0 / .2) 80%, rgb( 0 0 0 / .5) 100%), url('../images/Products/arte-con-alas/arte-en-ala.jpg');
+}
+
+.producto:nth-child(3) {
+    background-image: linear-gradient(rgb( 0 0 0 / 0) 0%, rgb( 0 0 0 / .1) 85%, rgb( 0 0 0 / .5) 100%), url('../images/Products/Pupas/pupa.JPG');
+}
+
+.producto:nth-child(4) {
+    background-image: linear-gradient(rgb( 0 0 0 / 0) 0%, rgb( 0 0 0 / .2) 80%, rgb( 0 0 0 / .5) 100%), url('../images/Products/Taxidermia/Disecada.jpg');
+}
+
+.producto__contenido {
+    transition: transform .3s ease-in-out;
+    -webkit-transition: transform .3s ease-in-out;
+    -moz-transition: transform .3s ease-in-out;
+    -ms-transition: transform .3s ease-in-out;
+    -o-transition: transform .3s ease-in-out;
+}
+
+.producto__contenido:hover {
+    transform: translateY(-8px);
+    -webkit-transform: translateY(-8px);
+    -moz-transform: translateY(-8px);
+    -ms-transform: translateY(-8px);
+    -o-transform: translateY(-8px);
+}
+
+.producto__titulo {
+    display: block;
+    line-height: 1;
+    font-size: 2.5rem;
+    font-weight: 700;
+    font-family: var(--tipografia-encabezado);
+    text-transform: uppercase;
+    color: var(--blanco);
+    padding-top: 2rem;
+}
+
+.producto__link {
+    color: var(--primario);
+    font-weight: 500;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    transition: color .175s ease-in;
+    -webkit-transition: color .175s ease-in;
+    -moz-transition: color .175s ease-in;
+    -ms-transition: color .175s ease-in;
+    -o-transition: color .175s ease-in;
+}
+
+.producto__link:hover {
+    color: var(--primario-hover);
+}
+
