@@ -2,9 +2,9 @@
 :root {
     /* Paleta de colores */
     --primario: #FFCC05;
-    --primario--hover: #F6A21E;
+    --primario-hover: #F6A21E;
     --secundario: #78D045;
-    --secundario--hover: #5cb727;    
+    --secundario-hover: #5cb727;    
     --gris-oscuro: #303030;
     --blanco: #fffefe;
     --negro: #1C1C1C;
@@ -18,6 +18,7 @@
     --border-radius-l: 1rem;
 
     /* Espaciado */
+    --espaciado-xs: 1.25rem;
     --espaciado-s: 2.5rem;
     --espaciado-m: 5rem;
     --espaciado-l: 10rem;
@@ -39,8 +40,10 @@ html {
 
 body {
     font-size: 1.6rem;
+    font-weight: 500;
     font-family: var(--tipografia-parrafo);
     line-height: 2;
+    height: 100%;
 }
 
 /* ESTILOS GLOBALES */
@@ -53,15 +56,29 @@ h3 {
 }
 
 h1 {
-    font-size: 5rem;
+    font-size: 3rem;
 }
 
 h2 {
-    font-size: 4.5rem;
+    font-size: 2.5rem;
 }
 
 h3 {
-    font-size: 4rem;
+    font-size: 2rem;
+}
+
+@media (min-width: 992px) {
+    h1 {
+        font-size: 5rem;
+    }
+    
+    h2 {
+        font-size: 4.5rem;
+    }
+    
+    h3 {
+        font-size: 4rem;
+    }
 }
 
 li {
@@ -109,7 +126,7 @@ button {
 }
 
 .boton--primario:hover {
-    background-color: var(--primario--hover);
+    background-color: var(--primario-hover);
 }
 
 /* UTILIDADES */
@@ -129,4 +146,139 @@ button {
 
 .mb-5 {
     margin-bottom: 5rem;
+}
+
+.d-none {
+    display: none;
+}
+
+/* ENCABEZADO */
+.header {
+    height: 98vh;
+    background-image: linear-gradient(rgb( 0 0 0 / .2) 0%, rgb( 0 0 0 / .2) 100%), url('../images/Header/Fondo-Archeoprepona.JPG');
+    background-repeat: no-repeat;
+    background-position: center, 35%;
+    background-size: cover;
+}
+
+@media (min-width: 992px) {
+    .header {
+        height: 92vh;
+        background-position: center, bottom center;
+    }
+}
+
+@media (min-height: 1000px) {
+    .header {
+        height: 80rem;
+    }
+}
+
+.header__contenido {
+    padding: var(--espaciado-xs) 0;
+    height: 95%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+@media (min-width: 992px) {
+    .header__contenido {
+        height: 90%;
+    }
+}
+
+.header__barra {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+@media (min-width: 992px) {
+    .header__barra {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+.header__logo {
+    width: 10rem;
+    height: 10rem;
+}
+
+.header__nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+@media (min-width: 768px) {
+    .header__nav {
+        flex-direction: row;
+        gap: 2rem;
+    }
+}
+
+.header__link {
+    font-size: 2rem;
+    color: var(--blanco);
+    transition: color .1s ease-in;
+    -webkit-transition: color .1s ease-in;
+    -moz-transition: color .1s ease-in;
+    -ms-transition: color .1s ease-in;
+    -o-transition: color .1s ease-in;
+}
+
+.header__link:hover {
+    color: var(--primario-hover);
+}
+
+.header__texto {
+    padding-top: 10rem;
+    text-align: center;
+    color: var(--blanco);
+}
+
+@media (min-width: 768px) {
+    .header__texto {
+        width: 70%;
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 992px) {
+    .header__texto {
+        width: 33%;
+        text-align: left;
+        margin: unset;
+    }
+}
+
+.header__especie-mariposa {
+    margin: 0 0 1rem;
+    line-height: 1.5;
+    font-size: 3rem;
+}
+
+.header__descripcion {
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+
+@media (min-width: 992px) {
+    .header__especie-mariposa {
+        margin: 0 0 2rem;
+        font-size: 5rem;
+    }
+    
+    .header__descripcion {
+        font-size: 1.8rem;
+        line-height: 2;
+    }
 }
