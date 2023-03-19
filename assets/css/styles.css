@@ -133,7 +133,7 @@ button {
 .contenedor {
     max-width: 140rem;
     margin: 0 auto;
-    width: 95%;
+    width: 92%;
 }
 
 .text-center {
@@ -221,12 +221,14 @@ button {
 @media (min-width: 768px) {
     .header__nav {
         flex-direction: row;
-        gap: 2rem;
+        gap: 4rem;
     }
 }
 
 .header__link {
-    font-size: 2rem;
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    font-weight: 700;
     color: var(--blanco);
     transition: color .1s ease-in;
     -webkit-transition: color .1s ease-in;
@@ -236,11 +238,11 @@ button {
 }
 
 .header__link--activo {
-    color: var(--primario-hover);
+    color: var(--primario);
 }
 
 .header__link:hover {
-    color: var(--primario-hover);
+    color: var(--primario);
 }
 
 .header__texto {
