@@ -174,8 +174,8 @@ button {
     display: none;
 }
 
-.fondo-patron {
-    background-image: linear-gradient(rgb( 255 255 255 / .175) 0%, rgb( 255 255 255 / .175) 100%), url('../images/background.jpg');
+.fondo-patron-1 {
+    background-image: linear-gradient(rgb( 255 255 255 / .2) 0%, rgb( 255 255 255 / .2) 100%), url('../images/background.jpg');
     background-repeat: no-repeat;
     background-position: center, center;
     background-size: cover;
@@ -365,16 +365,25 @@ button {
     text-transform: capitalize;
 }
 
-/* PRODUCTOS */
-.productos {
+/* PRODUCTOS Y SERVICIOS */
+.productos,
+.servicios {
     padding: var(--espaciado-s) 0;
 }
 
-.productos__titulo {
+@media (min-width: 768px) {
+    .servicios {
+        padding: var(--espaciado-l) 0;
+    }
+}
+
+.productos__titulo,
+.servicios__titulo {
     text-transform: capitalize;
 }
 
-.productos__grid {
+.productos__grid,
+.servicios__grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     padding: 0 1rem;
@@ -387,15 +396,32 @@ button {
     width: 100%;
 }
 
+@media (min-width: 768px) {
+    .servicios__grid {
+        overflow: unset;
+        scroll-snap-type: unset;
+        padding: 0;
+    }
+
+    .servicios__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 @media (min-width: 1200px) {
     .productos__grid {
         overflow: unset;
         scroll-snap-type: unset;
         padding: 0;
     }
+
+    .servicios__grid {
+        grid-template-columns: repeat(7, 1fr);
+    }
 }
 
-.producto {
+.producto,
+.servicio {
     height: 45rem;
     width: 30rem;
     
@@ -437,6 +463,55 @@ button {
     }
 }
 
+.producto__contenido,
+.servicio__contenido {
+    transition: transform .3s ease-in-out;
+    -webkit-transition: transform .3s ease-in-out;
+    -moz-transition: transform .3s ease-in-out;
+    -ms-transition: transform .3s ease-in-out;
+    -o-transition: transform .3s ease-in-out;
+}
+
+.producto__contenido:hover,
+.servicio__contenido:hover {
+    transform: translateY(-8px);
+    -webkit-transform: translateY(-8px);
+    -moz-transform: translateY(-8px);
+    -ms-transform: translateY(-8px);
+    -o-transform: translateY(-8px);
+}
+
+.producto__titulo,
+.servicio__titulo {
+    display: block;
+    line-height: 1;
+    font-size: 2.5rem;
+    font-weight: 700;
+    font-family: var(--tipografia-encabezado);
+    text-transform: uppercase;
+    color: var(--blanco);
+    padding-top: 2rem;
+}
+
+.producto__link,
+.servicio__link {
+    color: var(--primario);
+    font-weight: 500;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    transition: color .175s ease-in;
+    -webkit-transition: color .175s ease-in;
+    -moz-transition: color .175s ease-in;
+    -ms-transition: color .175s ease-in;
+    -o-transition: color .175s ease-in;
+}
+
+.producto__link:hover,
+.servicio__link:hover {
+    color: var(--primario-hover);
+}
+
+/* EXCLUSIVO DEL PRODUCTO */
 .producto:nth-child(1) {
     background-image: linear-gradient(rgb( 0 0 0 / 0) 0%, rgb( 0 0 0 / .1) 85%, rgb( 0 0 0 / .5) 100%), url('../images/Products/Joyas/collar-mariposa.JPG');
 }
@@ -453,48 +528,72 @@ button {
     background-image: linear-gradient(rgb( 0 0 0 / 0) 0%, rgb( 0 0 0 / .2) 80%, rgb( 0 0 0 / .5) 100%), url('../images/Products/Taxidermia/Disecada.jpg');
 }
 
-.producto__contenido {
-    transition: transform .3s ease-in-out;
-    -webkit-transition: transform .3s ease-in-out;
-    -moz-transition: transform .3s ease-in-out;
-    -ms-transition: transform .3s ease-in-out;
-    -o-transition: transform .3s ease-in-out;
+/* EXCLUSIVO DEL SERVICIO */
+.servicio:hover {
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
 
-.producto__contenido:hover {
-    transform: translateY(-8px);
-    -webkit-transform: translateY(-8px);
-    -moz-transform: translateY(-8px);
-    -ms-transform: translateY(-8px);
-    -o-transform: translateY(-8px);
+.servicio:nth-child(1) {
+    background-image: linear-gradient(rgb( 0 0 0 / 0) 0%, rgb( 0 0 0 / .5) 100%), url('../images/Services/Toures/TourVidaColores.JPG');
 }
 
-.producto__titulo {
-    display: block;
-    line-height: 1;
-    font-size: 2.5rem;
-    font-weight: 700;
-    font-family: var(--tipografia-encabezado);
-    text-transform: uppercase;
-    color: var(--blanco);
-    padding-top: 2rem;
+.servicio:nth-child(2) {
+    background-image: linear-gradient(rgb( 0 0 0 / 0) 0%, rgb( 0 0 0 / .5) 100%), url('../images/Services/Capacitaciones/Capacitaciones.jpg');
+    order: 3;
 }
 
-.producto__link {
-    color: var(--primario);
-    font-weight: 500;
-    font-size: 1.4rem;
-    text-transform: uppercase;
-    transition: color .175s ease-in;
-    -webkit-transition: color .175s ease-in;
-    -moz-transition: color .175s ease-in;
-    -ms-transition: color .175s ease-in;
-    -o-transition: color .175s ease-in;
+.servicio:nth-child(3) {
+    background-image: linear-gradient(rgb( 0 0 0 / 0) 0%, rgb( 0 0 0 / .5) 100%), url('../images/Services/Toures/TourEducativo.jpg');
 }
 
-.producto__link:hover {
-    color: var(--primario-hover);
+.servicio:nth-child(4) {
+    background-image: linear-gradient(rgb( 0 0 0 / 0) 0%, rgb( 0 0 0 / .5) 100%), url('../images/Services/Toures/TourCocora.png');
 }
+
+@media (min-width: 768px) {
+    .servicio {
+        width: 100%;
+        margin-bottom: 0;
+    }
+
+    .servicio:nth-child(1) {
+        grid-column: 1 / 3;
+    }
+    
+    .servicio:nth-child(2) {
+        grid-column: 1 / 3;
+        grid-row: 3 / 4;
+    }
+    
+    .servicio:nth-child(3) {
+        grid-column: 1 / 2;
+    }
+    
+    .servicio:nth-child(4) {
+       grid-column: 2 / 3;
+    }
+}
+
+@media (min-width: 992px) {
+    .servicio:nth-child(1) {
+        grid-column: 1 / 6;
+    }
+    
+    .servicio:nth-child(2) {
+        height: 100%;
+        grid-column: 6 / 8;
+        grid-row: 1 / 3;
+    }
+    
+    .servicio:nth-child(3) {
+        grid-column: 1 / 3;
+    }
+    
+    .servicio:nth-child(4) {
+       grid-column: 3 / 6;
+    }
+}
+
 
 /* BARRA-PRODUCTO */
 .barra-producto {
@@ -510,7 +609,7 @@ button {
 
 @media (min-width: 768px) {
     .barra-producto {
-        margin: var(--espaciado-l) 0;
+        margin: var(--espaciado-l) 0 0;
         background-image: linear-gradient(to right, transparent 50%, var(--gris-oscuro) 0%), url('../images/Product-Divider/HeliconiusCydnoGalanthus.jpg');
         background-position: center, left;
         background-repeat: repeat, no-repeat;
