@@ -595,42 +595,71 @@ button {
 }
 
 
-/* BARRA-PRODUCTO */
-.barra-producto {
+/* BARRA-PRODUCTO Y SERVICIO */
+.barra-producto,
+.barra-servicio {
     display: flex;
     align-items: center;
 
     margin-top: var(--espaciado-m);
-    background-image: linear-gradient(to bottom, transparent 50%, var(--gris-oscuro) 0%), url('../images/Product-Divider/HeliconiusCydnoGalanthus.jpg');
     background-position: center, top center;
     background-repeat: repeat, no-repeat;
     background-size: 100%, 80rem;
 }
 
+.barra-producto {
+    background-image: linear-gradient(to bottom, transparent 50%, var(--gris-oscuro) 0%), url('../images/Product-Divider/HeliconiusCydnoGalanthus.jpg');
+}
+
+.barra-servicio {
+    background-image: linear-gradient(to bottom, transparent 50%, var(--gris-oscuro) 0%), url('../images/Service-Divider/Turista.JPG');
+}
+
 @media (min-width: 768px) {
-    .barra-producto {
+    .barra-producto,
+    .barra-servicio {
         margin: var(--espaciado-l) 0 0;
-        background-image: linear-gradient(to right, transparent 50%, var(--gris-oscuro) 0%), url('../images/Product-Divider/HeliconiusCydnoGalanthus.jpg');
-        background-position: center, left;
+        background-position: center, center;
         background-repeat: repeat, no-repeat;
         background-size: 100%, 110rem;
     }
+
+    .barra-producto {
+        background-image: linear-gradient(to right, transparent 50%, var(--gris-oscuro) 0%), url('../images/Product-Divider/HeliconiusCydnoGalanthus.jpg');
+    }
+
+    .barra-servicio {
+        background-image: linear-gradient(to left, transparent 50%, var(--gris-oscuro) 0%), url('../images/Service-Divider/Turista.JPG');
+    }
 }
 
-.barra-producto__grid {
+@media (min-width: 992px) {
+    .barra-producto {
+        background-position: center, left;
+    }
+
+    .barra-servicio {
+        background-position: center, right;
+    }
+}
+
+.barra-producto__grid,
+.barra-servicio__grid {
     display: grid;
     grid-template-rows: repeat(2, 1fr);
 }
 
 @media (min-width: 768px) {
-    .barra-producto__grid {
+    .barra-producto__grid,
+    .barra-servicio__grid {
         grid-template-rows: unset;
         grid-template-columns: repeat(2, 1fr);
         gap: 5rem;
     }
 }
 
-.barra-producto__contenido {
+.barra-producto__contenido,
+.barra-servicio__contenido {
     grid-row: 2 / 3;
     padding: 3rem 1rem;
 
@@ -640,13 +669,26 @@ button {
 }
 
 @media (min-width: 768px) {
-    .barra-producto__contenido {
-        padding: 8rem 4rem 12rem;
-        grid-column: 2 / 3;
+    .barra-servicio__contenido {
+        text-align: right;
+        align-items: flex-end;
     }
 }
 
-.barra-producto__texto {
+@media (min-width: 768px) {
+    .barra-producto__contenido {
+        padding: 8rem 4rem 10rem;
+        grid-column: 2 / 3;
+    }
+
+    .barra-servicio__contenido {
+        padding: 8rem 4rem 10rem;
+        grid-column: 1 / 2;
+    }
+}
+
+.barra-producto__texto,
+.barra-servicio__texto {
     color: var(--blanco);
     font-size: 1.6rem;
 }
