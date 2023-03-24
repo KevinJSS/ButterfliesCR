@@ -90,7 +90,7 @@ li {
 }
 
 a {
-    text-decoration: none;
+    text-decoration: none; /*Quita la linea del link*/
 }
 
 p {
@@ -109,7 +109,7 @@ button {
 }
 
 .boton {
-    text-transform: uppercase;
+    text-transform: uppercase; /* En minuscula*/
     font-weight: 700;
     font-size: 1.6rem;
     padding: .7rem 1.2rem;
