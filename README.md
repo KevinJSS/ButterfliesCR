@@ -52,7 +52,6 @@ git clone git@github.com:KevinJSS/ButterfliesCR.git
 
 ## DEVELOPERS
 * Kevin Alvarado
-* <a href="https://github.com/MelMora21">Melany Mora</a>
 
 <hr/>
 
